@@ -19,6 +19,7 @@ class FreeSizeNativeAdView: GADNativeAdView, NativeAdProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = viewBackgroundColor
+        lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 6)
     }
     
     func bindingData(nativeAd: GADNativeAd) {
