@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		042F528227D8E09E008D5330 /* MobileAds.docc in Sources */ = {isa = PBXBuildFile; fileRef = 042F528127D8E09E008D5330 /* MobileAds.docc */; };
 		042F528327D8E09E008D5330 /* MobileAds.h in Headers */ = {isa = PBXBuildFile; fileRef = 042F528027D8E09E008D5330 /* MobileAds.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E08904229DC8F6D00530B8E /* InsideButtonNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E08904029DC8F6D00530B8E /* InsideButtonNativeAdView.swift */; };
+		0E08904329DC8F6D00530B8E /* InsideButtonNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E08904129DC8F6D00530B8E /* InsideButtonNativeAdView.xib */; };
 		760580AC27E3221800975794 /* TestAdsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760580AB27E3221800975794 /* TestAdsTests.swift */; };
 		760580B627E3221800975794 /* TestAdsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760580B527E3221800975794 /* TestAdsUITests.swift */; };
 		760580B827E3221800975794 /* TestAdsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760580B727E3221800975794 /* TestAdsUITestsLaunchTests.swift */; };
@@ -70,6 +72,8 @@
 		042F527D27D8E09E008D5330 /* MobileAds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MobileAds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		042F528027D8E09E008D5330 /* MobileAds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileAds.h; sourceTree = "<group>"; };
 		042F528127D8E09E008D5330 /* MobileAds.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = MobileAds.docc; sourceTree = "<group>"; };
+		0E08904029DC8F6D00530B8E /* InsideButtonNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideButtonNativeAdView.swift; sourceTree = "<group>"; };
+		0E08904129DC8F6D00530B8E /* InsideButtonNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsideButtonNativeAdView.xib; sourceTree = "<group>"; };
 		3D6191E3A787BACD7741EE30 /* Pods-MobileAds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAds.release.xcconfig"; path = "Target Support Files/Pods-MobileAds/Pods-MobileAds.release.xcconfig"; sourceTree = "<group>"; };
 		760580A727E3221800975794 /* TestAdsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAdsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		760580AB27E3221800975794 /* TestAdsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAdsTests.swift; sourceTree = "<group>"; };
@@ -203,6 +207,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		0E08903F29DC8F6D00530B8E /* InSideButton */ = {
+			isa = PBXGroup;
+			children = (
+				0E08904029DC8F6D00530B8E /* InsideButtonNativeAdView.swift */,
+				0E08904129DC8F6D00530B8E /* InsideButtonNativeAdView.xib */,
+			);
+			path = InSideButton;
+			sourceTree = "<group>";
+		};
 		16EE450534645BD057CED3CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +270,7 @@
 		762F5520281A709E0000FB10 /* AdNative */ = {
 			isa = PBXGroup;
 			children = (
+				0E08903F29DC8F6D00530B8E /* InSideButton */,
 				76BDA4C22952B53C005D7FBA /* FreeSize */,
 				762F5521281A709E0000FB10 /* Unified */,
 				762F5524281A709E0000FB10 /* Medium */,
@@ -566,6 +580,7 @@
 				76A495A828365022008685CF /* stars_3_5.png in Resources */,
 				76A495AB28365022008685CF /* stars_4_5.png in Resources */,
 				76A495A928365022008685CF /* stars_5.png in Resources */,
+				0E08904329DC8F6D00530B8E /* InsideButtonNativeAdView.xib in Resources */,
 				76BDA4C62952B609005D7FBA /* FreeSizeNativeAdView.xib in Resources */,
 				7660A7E62837406600262745 /* UnifiedNativeAdView.xib in Resources */,
 			);
@@ -649,6 +664,7 @@
 				76DF878A28A3B59A0078B20E /* PaymentQueueController.swift in Sources */,
 				76A83C64285C24FF0089E814 /* UnifiedNativeAdView_2.swift in Sources */,
 				762F5547281A709E0000FB10 /* AdMobManager+Rewarded.swift in Sources */,
+				0E08904229DC8F6D00530B8E /* InsideButtonNativeAdView.swift in Sources */,
 				042F528227D8E09E008D5330 /* MobileAds.docc in Sources */,
 				76DF878528A3B59A0078B20E /* ProductsInfoController.swift in Sources */,
 				76BDA4C52952B609005D7FBA /* FreeSizeNativeAdView.swift in Sources */,

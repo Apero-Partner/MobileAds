@@ -20,6 +20,7 @@ public enum NativeAdType {
     case medium
     case unified(OptionAdType)
     case freeSize
+    case insideButton
     
     var nibName: String {
         switch self {
@@ -37,6 +38,8 @@ public enum NativeAdType {
         case .freeSize:
             return  "FreeSizeNativeAdView"
             
+        case .insideButton:
+            return "InsideButtonNativeAdView"
         }
     }
 }
