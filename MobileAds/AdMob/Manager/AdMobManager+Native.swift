@@ -142,6 +142,10 @@ extension AdMobManager: GADNativeAdDelegate {
                 if let ad = nativeAdViews.first(where: {$0.nativeAd == nativeAd}) {
                     logEvenClick(id: ad.adUnitID ?? "")
                 }
+            } else if let nativeAdViews = ad as? [InsideButtonNativeAdView] {
+                if let ad = nativeAdViews.first(where: {$0.nativeAd == nativeAd}) {
+                    logEvenClick(id: ad.adUnitID ?? "")
+                }
             }
         }
     }
@@ -188,6 +192,9 @@ extension AdMobManager: GADNativeAdLoaderDelegate {
             nativeAdView.hideSkeleton()
             nativeAdView.bindingData(nativeAd: nativeAd)
         } else if let nativeAdView = nativeAdView as? FreeSizeNativeAdView {
+            nativeAdView.adUnitID = adLoader.adUnitID
+            nativeAdView.bindingData(nativeAd: nativeAd)
+        } else if let nativeAdView = nativeAdView as? InsideButtonNativeAdView {
             nativeAdView.adUnitID = adLoader.adUnitID
             nativeAdView.bindingData(nativeAd: nativeAd)
         }

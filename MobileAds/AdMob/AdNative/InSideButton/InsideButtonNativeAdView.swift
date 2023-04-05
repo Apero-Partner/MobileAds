@@ -19,12 +19,12 @@ class InsideButtonNativeAdView: GADNativeAdView, NativeAdProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = viewBackgroundColor
-        lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 6)
+        lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 8)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 6)
+        lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 8)
     }
     
     func bindingData(nativeAd: GADNativeAd) {
