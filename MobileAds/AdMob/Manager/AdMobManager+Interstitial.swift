@@ -111,26 +111,6 @@ extension AdMobManager: GADFullScreenContentDelegate {
             blockWillDismiss?()
         }
     }
-
-    public func showIntertitial(primaryUnitId: AdUnitID, subUnitId: AdUnitID, blockWillDismiss: VoidBlockAds? = nil, blockDidDismiss: VoidBlockAds? = nil) {
-        AdResumeManager.shared.isShowingAd = true // kiểm tra nếu show inter thì ko show resume
-        createAdInterstitialIfNeed(unitId: primaryUnitId) { [weak self] result in
-            guard let self = self else { return }
-            if result {
-                self.isSplash = true
-                self.showIntertitial(unitId: primaryUnitId, blockWillDismiss: blockWillDismiss, blockDidDismiss: blockDidDismiss)
-            } else {
-                self.createAdInterstitialIfNeed(unitId: subUnitId) { [weak self] result in
-                    if result {
-                        self?.showIntertitial(unitId: subUnitId,
-                                              blockWillDismiss: blockWillDismiss, blockDidDismiss: blockDidDismiss)
-                    } else {
-                        blockWillDismiss?()
-                    }
-                }
-            }
-        }
-    }
     
     // MARK: - GADInterstitialDelegate
     
