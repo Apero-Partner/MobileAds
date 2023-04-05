@@ -116,6 +116,54 @@ open class AdResumeManager: NSObject {
             }
         }
     }
+
+    public func loadAdSplash(adId: AdUnitID,
+                             viewController: UIViewController ,
+                             loadAppOpenFail: VoidBlockAds? = nil) {
+        if isLoadingAd || isAdAvailable() {
+            return
+        }
+        isLoadingAd = true
+        GADAppOpenAd.load(withAdUnitID: adId.rawValue,
+                          request: GADRequest(), orientation: .portrait) { ad, error in
+            self.isLoadingAd = false
+            if error != nil {
+                loadAppOpenFail?()
+                return
+            }
+            self.appOpenAd = ad
+            self.appOpenAd?.fullScreenContentDelegate = self
+            self.loadTime = Date()
+            self.isShowingAd = true
+            self.showVC = viewController
+            if self.showVC?.navigationController != nil {
+                self.showVC = self.showVC?.navigationController
+                if self.showVC?.tabBarController != nil {
+                    self.showVC = self.showVC?.tabBarController
+                }
+            }
+            guard let showVC = self.showVC else { return }
+
+            let loadingVC = AdFullScreenLoadingVC()
+            loadingVC.needLoadAd = false
+            loadingVC.isOpenAd = false
+            loadingVC.modalPresentationStyle = .fullScreen
+            UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addSubview(loadingVC.view)
+            showVC.view.endEditing(true)
+            loadingVC.view.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                loadingVC.view.removeFromSuperview()
+                loadingVC.removeFromParent()
+                loadingVC.willMove(toParent: nil)
+                self.addBackGroundViewWhenShowAd()
+                ad?.present(fromRootViewController: showVC)
+            }
+
+        }
+    }
     
     private func addBackGroundViewWhenShowAd() {
          backgroudView = UIView()
