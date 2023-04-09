@@ -36,17 +36,17 @@ public struct AdUnitID {
 //    MARK: - Enum Theme Style Ads
 public enum ThemeStyleAds {
     case origin
-    case custom(backgroundColor: UIColor, titleColor: UIColor, vertiserColor: UIColor, contenColor: UIColor, actionColor: UIColor, backgroundAction: UIColor)
+    case custom(backgroundColor: UIColor? = nil, titleColor: UIColor, vertiserColor: UIColor, contenColor: UIColor, actionColor: UIColor, backgroundAction: UIColor, nativeButtonStartColor: UIColor? = nil, nativeButtonEndColor: UIColor? = nil)
     case setBackground(backgroundColor: UIColor)
-    
-    var colors: (backgroundColor: UIColor, titleColor: UIColor, vertiserColor: UIColor, contenColor: UIColor, actionColor: UIColor, backgroundAction: UIColor) {
+
+    var colors: (backgroundColor: UIColor?, titleColor: UIColor, vertiserColor: UIColor, contenColor: UIColor, actionColor: UIColor, backgroundAction: UIColor, nativeButtonStartColor: UIColor?, nativeButtonEndColor: UIColor?) {
         switch self {
         case .origin:
-            return (UIColor(hex: 0xFFFFFF), UIColor(hex: 0x0303B3), UIColor(hex: 0x001868), UIColor(hex: 0x666666), UIColor(hex: 0xFFFFFF), UIColor(hex: 0x007AFF))
-        case .custom(let backgroundColor, let titleColor, let vertiserColor, let contenColor, let actionColor, let backgroundAction):
-            return (backgroundColor, titleColor, vertiserColor, contenColor, actionColor, backgroundAction)
+            return (UIColor(hex: 0xFFFFFF), UIColor(hex: 0x0303B3), UIColor(hex: 0x001868), UIColor(hex: 0x666666), UIColor(hex: 0xFFFFFF), UIColor(hex: 0x007AFF), nil, nil)
+        case .custom(let backgroundColor, let titleColor, let vertiserColor, let contenColor, let actionColor, let backgroundAction, let nativeButtonStartColor, let nativeButtonEndColor):
+            return (backgroundColor, titleColor, vertiserColor, contenColor, actionColor, backgroundAction, nativeButtonStartColor, nativeButtonEndColor)
         case .setBackground(let backgroundColor):
-            return (backgroundColor, UIColor(hex: 0x0303B3), UIColor(hex: 0x001868), UIColor(hex: 0x666666), UIColor(hex: 0xFFFFFF), UIColor(hex: 0x007AFF))
+            return (backgroundColor, UIColor(hex: 0x0303B3), UIColor(hex: 0x001868), UIColor(hex: 0x666666), UIColor(hex: 0xFFFFFF), UIColor(hex: 0x007AFF), nil, nil)
         }
     }
 }
@@ -75,6 +75,7 @@ open class AdMobManager: NSObject {
     public var adNativeBackgroundAdsLabelColor:  UIColor = UIColor(hex: 0xFDB812)
     
     public var nativeButtonCornerRadius: CGFloat = 16
+    public var nativeButtonGradientState: Bool = false
     public var rewardErrorString: String         = "An error occurred"
     public var adFullScreenLoadingString: String = "Ad is loading"
     public var skeletonGradient = UIColor.clouds

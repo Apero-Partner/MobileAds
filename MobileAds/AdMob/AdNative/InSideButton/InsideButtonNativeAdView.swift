@@ -13,7 +13,7 @@ class InsideButtonNativeAdView: GADNativeAdView, NativeAdProtocol {
 
     @IBOutlet weak var lblAds: UILabel!
     
-    let (viewBackgroundColor, titleColor, _, contenColor, actionColor, backgroundAction) = AdMobManager.shared.adsNativeColor.colors
+    let (viewBackgroundColor, titleColor, _, contenColor, actionColor, backgroundAction, nativeButtonStartColor, nativeButtonEndColor) = AdMobManager.shared.adsNativeColor.colors
     var adUnitID: String?
     
     override func awakeFromNib() {

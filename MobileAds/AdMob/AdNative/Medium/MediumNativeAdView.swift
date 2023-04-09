@@ -14,7 +14,7 @@ class MediumNativeAdView: GADNativeAdView, NativeAdProtocol {
     @IBOutlet weak var ratingStackView: UIStackView!
     @IBOutlet weak var starNumberLabel: UILabel!
     
-    let (viewBackgroundColor, titleColor, vertiserColor, contenColor, actionColor, backgroundAction) = AdMobManager.shared.adsNativeColor.colors
+    let (viewBackgroundColor, titleColor, vertiserColor, contenColor, actionColor, backgroundAction, nativeButtonStartColor, nativeButtonEndColor) = AdMobManager.shared.adsNativeColor.colors
     var adUnitID: String?
     
     override func awakeFromNib() {
@@ -56,7 +56,11 @@ class MediumNativeAdView: GADNativeAdView, NativeAdProtocol {
         advertiserView?.isHidden = nativeAd.advertiser == nil
                 
         (self.callToActionView as? UIButton)?.setTitleColor(actionColor, for: .normal)
-        self.callToActionView?.backgroundColor = backgroundAction
+        if AdMobManager.shared.nativeButtonGradientState, let startColor = nativeButtonStartColor, let endColor = nativeButtonEndColor, let button = callToActionView {
+            button.layer.backgroundColor = UIColor().gradientColor(bounds: button.bounds, colorStart: startColor, colorEnd: endColor, isHorizontalMode: false)?.cgColor
+        } else {
+            self.callToActionView?.layer.backgroundColor = backgroundAction.cgColor
+        }
         self.callToActionView?.layer.cornerRadius = AdMobManager.shared.adsNativeCornerRadiusButton
         (self.bodyView as? UILabel)?.textColor = contenColor
         (self.advertiserView as? UILabel)?.textColor = vertiserColor

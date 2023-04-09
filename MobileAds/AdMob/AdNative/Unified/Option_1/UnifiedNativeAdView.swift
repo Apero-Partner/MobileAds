@@ -16,7 +16,7 @@ class UnifiedNativeAdView: GADNativeAdView, NativeAdProtocol {
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var lblRateCount: UILabel!
     
-    let (viewBackgroundColor, titleColor, vertiserColor, contenColor, actionColor, backgroundAction) = AdMobManager.shared.adsNativeColor.colors
+    let (viewBackgroundColor, titleColor, vertiserColor, contenColor, actionColor, backgroundAction, nativeButtonStartColor, nativeButtonEndColor) = AdMobManager.shared.adsNativeColor.colors
     var adUnitID: String?
     
     override func awakeFromNib() {
@@ -65,7 +65,11 @@ class UnifiedNativeAdView: GADNativeAdView, NativeAdProtocol {
         self.advertiserView?.isHidden = nativeAd.advertiser == nil
                 
         self.callToActionView?.layer.cornerRadius = AdMobManager.shared.nativeButtonCornerRadius
-        self.callToActionView?.layer.backgroundColor = backgroundAction.cgColor
+        if AdMobManager.shared.nativeButtonGradientState, let startColor = nativeButtonStartColor, let endColor = nativeButtonEndColor, let button = callToActionView {
+            button.layer.backgroundColor = UIColor().gradientColor(bounds: button.bounds, colorStart: startColor, colorEnd: endColor, isHorizontalMode: false)?.cgColor
+        } else {
+            self.callToActionView?.layer.backgroundColor = backgroundAction.cgColor
+        }
         (self.callToActionView as? UIButton)?.setTitleColor(actionColor, for: .normal)
         self.callToActionView?.layer.cornerRadius = AdMobManager.shared.adsNativeCornerRadiusButton
         (self.bodyView as? UILabel)?.textColor = contenColor
