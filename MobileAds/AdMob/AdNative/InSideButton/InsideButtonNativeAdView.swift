@@ -9,20 +9,20 @@ import UIKit
 import GoogleMobileAds
 import SkeletonView
 
-class InsideButtonNativeAdView: GADNativeAdView, NativeAdProtocol {
+public class InsideButtonNativeAdView: GADNativeAdView, NativeAdProtocol {
 
     @IBOutlet weak var lblAds: UILabel!
     
     let (viewBackgroundColor, titleColor, _, contenColor, actionColor, backgroundAction, nativeButtonStartColor, nativeButtonEndColor) = AdMobManager.shared.adsNativeColor.colors
     var adUnitID: String?
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = viewBackgroundColor
         lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 8)
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 8)
     }
