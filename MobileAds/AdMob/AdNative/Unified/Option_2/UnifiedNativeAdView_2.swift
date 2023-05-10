@@ -70,9 +70,13 @@ class UnifiedNativeAdView_2: GADNativeAdView, NativeAdProtocol {
 
         (self.advertiserView as? UILabel)?.text = nativeAd.advertiser
         self.advertiserView?.isHidden = nativeAd.advertiser == nil
-                
+        if backgroundAction.count > 1 {
+            self.callToActionView?.gradient(startColor: UIColor(hex: 0xE2465C), endColor: UIColor(hex: 0xFAC06F))
+        } else {
+            self.callToActionView?.layer.backgroundColor = backgroundAction.first?.cgColor
+        }
         self.callToActionView?.layer.cornerRadius = AdMobManager.shared.nativeButtonCornerRadius
-        self.callToActionView?.layer.backgroundColor = backgroundAction.cgColor
+        
         (self.callToActionView as? UIButton)?.setTitleColor(actionColor, for: .normal)
         (self.bodyView as? UILabel)?.textColor = contenColor
         (advertiserView as? UILabel)?.textColor = vertiserColor

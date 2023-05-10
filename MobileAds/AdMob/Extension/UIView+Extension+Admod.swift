@@ -25,6 +25,42 @@ extension UIView {
                 return nil
             }
     }
+    
+    enum GradientDirection {
+        case left, topLeft, top, topRight, right, bottomRight, bottom, bottomLeft
+        
+        var point: CGPoint {
+            switch self {
+            case .left:
+                return .init(x: 0, y: 0.5)
+            case .topLeft:
+                return .init(x: 0, y: 0)
+            case .top:
+                return .init(x: 0.5, y: 0)
+            case .topRight:
+                return .init(x: 1, y: 0)
+            case .right:
+                return .init(x: 1, y: 0.5)
+            case .bottomRight:
+                return .init(x: 1, y: 1)
+            case .bottom:
+                return .init(x: 0.5, y: 1)
+            case .bottomLeft:
+                return .init(x: 0, y: 1)
+            }
+        }
+    }
+    
+    func gradient(startColor: UIColor = UIColor(hex: 0xE2465C), endColor: UIColor = UIColor(hex: 0xFFC370), cornerRadius: CGFloat = 0, startPoint: GradientDirection = .left, endPoint: GradientDirection = .right) {
+        let gradient = CAGradientLayer()
+        gradient.colors = [startColor.cgColor, endColor.cgColor]
+        gradient.startPoint = startPoint.point
+        gradient.endPoint = endPoint.point
+        gradient.frame = bounds
+        gradient.cornerRadius = cornerRadius
+        layer.insertSublayer(gradient, at: 0)
+        layer.cornerRadius = cornerRadius
+    }
 }
 
 @IBDesignable
@@ -73,3 +109,4 @@ class DesignableGradientLablelText: UILabel {
     }
     
 }
+
