@@ -47,7 +47,6 @@ extension AdMobManager: GADBannerViewDelegate {
             let gradient = SkeletonGradient(baseColor: self.skeletonGradient)
             adBannerView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight, duration: 0.7))
         }
-        //adBannerView.adSize = GADAdSizeFromCGSize(view.bounds.size)
         let request = GADRequest()
         adBannerView.load(request)
     }
@@ -82,6 +81,7 @@ extension AdMobManager: GADBannerViewDelegate {
     
     public func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         print("ad==> bannerView faild \(error.localizedDescription)")
+        bannerView.delegate = nil
         if let unitId = bannerView.adUnitID {
             self.removeAd(unitId: unitId)
             self.blockBannerFaild?(unitId)
@@ -97,6 +97,7 @@ extension AdMobManager: GADBannerViewDelegate {
     
     public func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
         print("ad==> adViewDidRecordImpression bannerView\(bannerView.adUnitID ?? "")")
+        bannerView.delegate = nil
         bannerView.hideSkeleton()
         bannerView.superview?.hideSkeleton()
         blockLoadBannerSuccess?(true)
