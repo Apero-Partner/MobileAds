@@ -15,6 +15,7 @@ extension AdMobManager: GADFullScreenContentDelegate {
     /// khởi tạo id ads trước khi show
     public func createAdInterstitialIfNeed(unitId: AdUnitID, completion: BoolBlockAds? = nil) {
         if self.getAdInterstitial(unitId: unitId) != nil {
+            completion?(true)
             return
         }
         
