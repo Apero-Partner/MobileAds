@@ -49,7 +49,7 @@ open class AdResumeManager: NSObject {
         appOpenAdManagerDelegate?.appOpenAdManagerAdDidComplete(self)
     }
     
-    public func loadAd() {
+    public func loadAd(completion: ((Bool) -> Void)? = nil) {
         if isLoadingAd || isAdAvailable() {
             return
         }
@@ -59,6 +59,7 @@ open class AdResumeManager: NSObject {
             if let error = error {
                 self.appOpenAd = nil
                 self.loadTime = nil
+                completion?(false)
                 print("App open ad failed to load with error: \(error.localizedDescription).")
                 return
             }
@@ -66,6 +67,7 @@ open class AdResumeManager: NSObject {
             self.appOpenAd = ad
             self.appOpenAd?.fullScreenContentDelegate = self
             self.loadTime = Date()
+            completion?(true)
             print("App open ad loaded successfully.")
         }
     }
