@@ -9,6 +9,9 @@ import UIKit
 import GoogleMobileAds
 
 class MediumNativeAdView: GADNativeAdView, NativeAdProtocol {
+    func getGADView() -> GADNativeAdView {
+        return self
+    }
     
     @IBOutlet weak var lblAds: UILabel!
     @IBOutlet weak var ratingStackView: UIStackView!

@@ -45,6 +45,8 @@
 		76A495AB28365022008685CF /* stars_4_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 76A495A728365022008685CF /* stars_4_5.png */; };
 		76A83C64285C24FF0089E814 /* UnifiedNativeAdView_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A83C62285C24FF0089E814 /* UnifiedNativeAdView_2.swift */; };
 		76A83C65285C24FF0089E814 /* UnifiedNativeAdView_2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76A83C63285C24FF0089E814 /* UnifiedNativeAdView_2.xib */; };
+		76AEC4332A5FF6E20001EACC /* SmallMediaNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEC4312A5FF6E20001EACC /* SmallMediaNativeAdView.swift */; };
+		76AEC4342A5FF6E20001EACC /* SmallMediaNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76AEC4322A5FF6E20001EACC /* SmallMediaNativeAdView.xib */; };
 		76BDA4C52952B609005D7FBA /* FreeSizeNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDA4C32952B609005D7FBA /* FreeSizeNativeAdView.swift */; };
 		76BDA4C62952B609005D7FBA /* FreeSizeNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BDA4C42952B609005D7FBA /* FreeSizeNativeAdView.xib */; };
 		76DF877F28A3B59A0078B20E /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877028A3B59A0078B20E /* SKProduct+LocalizedPrice.swift */; };
@@ -109,6 +111,8 @@
 		76A495A728365022008685CF /* stars_4_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars_4_5.png; sourceTree = "<group>"; };
 		76A83C62285C24FF0089E814 /* UnifiedNativeAdView_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnifiedNativeAdView_2.swift; sourceTree = "<group>"; };
 		76A83C63285C24FF0089E814 /* UnifiedNativeAdView_2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView_2.xib; sourceTree = "<group>"; };
+		76AEC4312A5FF6E20001EACC /* SmallMediaNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallMediaNativeAdView.swift; sourceTree = "<group>"; };
+		76AEC4322A5FF6E20001EACC /* SmallMediaNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmallMediaNativeAdView.xib; sourceTree = "<group>"; };
 		76BDA4C32952B609005D7FBA /* FreeSizeNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeSizeNativeAdView.swift; sourceTree = "<group>"; };
 		76BDA4C42952B609005D7FBA /* FreeSizeNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreeSizeNativeAdView.xib; sourceTree = "<group>"; };
 		76DF877028A3B59A0078B20E /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 		762F5520281A709E0000FB10 /* AdNative */ = {
 			isa = PBXGroup;
 			children = (
+				76AEC42C2A5FF6130001EACC /* SmallMedia */,
 				76BDA4C22952B53C005D7FBA /* FreeSize */,
 				762F5521281A709E0000FB10 /* Unified */,
 				762F5524281A709E0000FB10 /* Medium */,
@@ -408,6 +413,15 @@
 				76A83C63285C24FF0089E814 /* UnifiedNativeAdView_2.xib */,
 			);
 			path = Option_2;
+			sourceTree = "<group>";
+		};
+		76AEC42C2A5FF6130001EACC /* SmallMedia */ = {
+			isa = PBXGroup;
+			children = (
+				76AEC4312A5FF6E20001EACC /* SmallMediaNativeAdView.swift */,
+				76AEC4322A5FF6E20001EACC /* SmallMediaNativeAdView.xib */,
+			);
+			path = SmallMedia;
 			sourceTree = "<group>";
 		};
 		76BDA4C22952B53C005D7FBA /* FreeSize */ = {
@@ -565,6 +579,7 @@
 				76A495AA28365022008685CF /* stars_4.png in Resources */,
 				76A495A828365022008685CF /* stars_3_5.png in Resources */,
 				76A495AB28365022008685CF /* stars_4_5.png in Resources */,
+				76AEC4342A5FF6E20001EACC /* SmallMediaNativeAdView.xib in Resources */,
 				76A495A928365022008685CF /* stars_5.png in Resources */,
 				76BDA4C62952B609005D7FBA /* FreeSizeNativeAdView.xib in Resources */,
 				7660A7E62837406600262745 /* UnifiedNativeAdView.xib in Resources */,
@@ -631,6 +646,7 @@
 				9AF73B2D283CF2F60084DDDF /* Utils.swift in Sources */,
 				762F554E281A709E0000FB10 /* AdBannerBottomVC.swift in Sources */,
 				7695570027E19EAE0028127E /* TestViewController.swift in Sources */,
+				76AEC4332A5FF6E20001EACC /* SmallMediaNativeAdView.swift in Sources */,
 				76DF878228A3B59A0078B20E /* SwiftyStoreKit+Types.swift in Sources */,
 				7695570627E1A6010028127E /* BundleAds.swift in Sources */,
 				768BF63F283F244D00737CEF /* RemoteConfigService.swift in Sources */,

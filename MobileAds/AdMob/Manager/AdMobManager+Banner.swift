@@ -38,6 +38,8 @@ extension AdMobManager: GADBannerViewDelegate {
         let adBannerView = self.createAdBannerIfNeed(unitId: unitId)
         adBannerView.rootViewController = rootVC
         view.addSubview(adBannerView)
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = UIColor.gray.cgColor
         adBannerView.delegate = self
         adBannerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

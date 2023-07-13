@@ -9,7 +9,7 @@ import UIKit
 import GoogleMobileAds
 import SkeletonView
 
-class FreeSizeNativeAdView: GADNativeAdView, NativeAdProtocol {
+class FreeSizeNativeAdView: GADNativeAdView {
 
     @IBOutlet weak var lblAds: UILabel!
     
@@ -68,5 +68,10 @@ class FreeSizeNativeAdView: GADNativeAdView, NativeAdProtocol {
         self.nativeAd = nativeAd
         
     }
+}
 
+extension FreeSizeNativeAdView: NativeAdProtocol {
+    func getGADView() -> GADNativeAdView {
+        return self
+    }
 }

@@ -10,6 +10,9 @@ import GoogleMobileAds
 import SkeletonView
 
 class SmallNativeAdView: GADNativeAdView, NativeAdProtocol {
+    func getGADView() -> GADNativeAdView {
+        return self
+    }
 
     @IBOutlet weak var lblAds: UILabel!
     @IBOutlet weak var cstWidthBtn: NSLayoutConstraint!

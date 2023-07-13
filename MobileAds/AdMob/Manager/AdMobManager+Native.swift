@@ -20,6 +20,7 @@ public enum NativeAdType {
     case medium
     case unified(OptionAdType)
     case freeSize
+    case smallMedia
     
     var nibName: String {
         switch self {
@@ -35,8 +36,9 @@ public enum NativeAdType {
                 return "UnifiedNativeAdView_2"
             }
         case .freeSize:
-            return  "FreeSizeNativeAdView"
-            
+            return "FreeSizeNativeAdView"
+        case .smallMedia:
+            return "SmallMediaNativeAdView"
         }
     }
 }
@@ -48,8 +50,8 @@ extension AdMobManager {
         return listLoader.object(forKey: unitId.rawValue) as? GADAdLoader
     }
 
-    private func getAdNative(unitId: String) -> [GADNativeAdView] {
-        if let adNativeView = listAd.object(forKey: unitId) as? [GADNativeAdView] {
+    private func getAdNative(unitId: String) -> [NativeAdProtocol] {
+        if let adNativeView = listAd.object(forKey: unitId) as? [NativeAdProtocol] {
             return adNativeView
         }
         return []
@@ -60,16 +62,17 @@ extension AdMobManager {
         removeAd(unitId: unitId.rawValue)
         if !adNativeViews.isEmpty {
             adNativeViews.forEach { adNativeView in
-                adNativeView.removeFromSuperview()
+                adNativeView.getGADView().removeFromSuperview()
             }
         }
-        var nativeViews: [GADNativeAdView] = []
+        var nativeViews: [NativeAdProtocol] = []
         views.forEach { view in
             guard
                 let nibObjects = Bundle.main.loadNibNamed(type.nibName, owner: nil, options: nil),
-                let adNativeView = nibObjects.first as? GADNativeAdView else {
+                let adNativeProtocol = nibObjects.first as? NativeAdProtocol else {
                     return
                 }
+            let adNativeView = adNativeProtocol.getGADView()
             view.addSubview(adNativeView)
             adNativeView.snp.makeConstraints { make in
                 make.edges.equalToSuperview()
@@ -78,7 +81,7 @@ extension AdMobManager {
             adNativeView.isSkeletonable = true
             let gradient = SkeletonGradient(baseColor: self.skeletonGradient)
             adNativeView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight, duration: 0.7))
-            nativeViews.append(adNativeView)
+            nativeViews.append(adNativeProtocol)
         }
         
         listAd.setObject(nativeViews, forKey: unitId.rawValue as NSCopying)
@@ -119,24 +122,8 @@ extension AdMobManager: GADNativeAdDelegate {
     func logEventNative(nativeAd: GADNativeAd) {
         let adViews = listAd.allValues
         adViews.forEach { ad in
-            if let nativeAdViews = ad as? [UnifiedNativeAdView] {
-                if let ad = nativeAdViews.first(where: {$0.nativeAd == nativeAd}) {
-                    logEvenClick(id: ad.adUnitID ?? "")
-                }
-            } else if let nativeAdViews = ad as? [UnifiedNativeAdView_2] {
-                if let ad = nativeAdViews.first(where: {$0.nativeAd == nativeAd}) {
-                    logEvenClick(id: ad.adUnitID ?? "")
-                }
-            } else if let nativeAdViews = ad as? [SmallNativeAdView] {
-                if let ad = nativeAdViews.first(where: {$0.nativeAd == nativeAd}) {
-                    logEvenClick(id: ad.adUnitID ?? "")
-                }
-            } else if let nativeAdViews = ad as? [MediumNativeAdView] {
-                if let ad = nativeAdViews.first(where: {$0.nativeAd == nativeAd}) {
-                    logEvenClick(id: ad.adUnitID ?? "")
-                }
-            } else if let nativeAdViews = ad as? [FreeSizeNativeAdView] {
-                if let ad = nativeAdViews.first(where: {$0.nativeAd == nativeAd}) {
+            if let nativeAdViews = ad as? [NativeAdProtocol] {
+                if let ad = nativeAdViews.first(where: {$0.getGADView() == nativeAd}) {
                     logEvenClick(id: ad.adUnitID ?? "")
                 }
             }
@@ -165,29 +152,12 @@ extension AdMobManager: GADNativeAdLoaderDelegate {
         nativeAd.paidEventHandler = { value in
             self.trackAdRevenue(value: value, unitId: adLoader.adUnitID)
         }
-        guard let nativeAdView = self.getAdNative(unitId: adLoader.adUnitID).first(where: {$0.tag == 0}) else {return}
-        nativeAdView.tag = 2
+        guard var nativeAdView = self.getAdNative(unitId: adLoader.adUnitID).first(where: {$0.getGADView().tag == 0}) else {return}
+        nativeAdView.getGADView().tag = 2
         nativeAd.mediaContent.videoController.delegate = self
-        if let nativeAdView = nativeAdView as? UnifiedNativeAdView {
-            nativeAdView.adUnitID = adLoader.adUnitID
-            nativeAdView.hideSkeleton()
-            nativeAdView.bindingData(nativeAd: nativeAd)
-        } else if let nativeAdView = nativeAdView as? UnifiedNativeAdView_2 {
-            nativeAdView.adUnitID = adLoader.adUnitID
-            nativeAdView.hideSkeleton()
-            nativeAdView.bindingData(nativeAd: nativeAd)
-        } else if let nativeAdView = nativeAdView as? SmallNativeAdView {
-            nativeAdView.adUnitID = adLoader.adUnitID
-            nativeAdView.hideSkeleton()
-            nativeAdView.bindingData(nativeAd: nativeAd)
-        } else if let nativeAdView = nativeAdView as? MediumNativeAdView {
-            nativeAdView.adUnitID = adLoader.adUnitID
-            nativeAdView.hideSkeleton()
-            nativeAdView.bindingData(nativeAd: nativeAd)
-        } else if let nativeAdView = nativeAdView as? FreeSizeNativeAdView {
-            nativeAdView.adUnitID = adLoader.adUnitID
-            nativeAdView.bindingData(nativeAd: nativeAd)
-        }
+        nativeAdView.updateId(value: adLoader.adUnitID)
+        nativeAdView.getGADView().hideSkeleton()
+        nativeAdView.bindingData(nativeAd: nativeAd)
     }
     
     public func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {

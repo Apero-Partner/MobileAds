@@ -74,7 +74,7 @@ open class AdMobManager: NSObject {
    
     public var adsNativeBorderColor:             UIColor = .clear
     public var adNativeAdsLabelColor:            UIColor = .white
-    public var adNativeBackgroundAdsLabelColor:  UIColor = UIColor(hex: 0xFDB812)
+    public var adNativeBackgroundAdsLabelColor: UIColor = UIColor(hex: 0xFDB812)
     
     public var nativeButtonCornerRadius: CGFloat = 16
     public var rewardErrorString: String         = "An error occurred"
