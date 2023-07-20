@@ -14,7 +14,7 @@ pod 'Google-Mobile-Ads-SDK', '~> 9.14.0'
 pod 'SkeletonView', '~> 1.29.2'
 pod 'MONActivityIndicatorView', '~> 0.0.3'
 pod 'SnapKit', '~> 5.6.0'
-pod 'Adjust'
+pod 'Adjust', '~> 4.33.5'
 pod 'Toast-Swift', '~> 5.0.1'
 
 
