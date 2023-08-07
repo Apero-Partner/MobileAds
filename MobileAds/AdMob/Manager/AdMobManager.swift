@@ -16,6 +16,7 @@ import FirebaseAnalytics
 public struct SampleAdUnitID {
     public static let adFormatAppOpen              = "ca-app-pub-3940256099942544/3419835294"
     public static let adFormatBanner               = "ca-app-pub-3940256099942544/6300978111"
+    public static let adFormatCollapsibleBanner    = "ca-app-pub-3940256099942544/8388050270"
     public static let adFormatBanner_2             = "ca-app-pub-3940256099942544/2934735716"
     public static let adFormatInterstitial         = "ca-app-pub-3940256099942544/1033173712"
     public static let adFormatInterstitialVideo    = "ca-app-pub-3940256099942544/8691691433"

@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		042F528227D8E09E008D5330 /* MobileAds.docc in Sources */ = {isa = PBXBuildFile; fileRef = 042F528127D8E09E008D5330 /* MobileAds.docc */; };
 		042F528327D8E09E008D5330 /* MobileAds.h in Headers */ = {isa = PBXBuildFile; fileRef = 042F528027D8E09E008D5330 /* MobileAds.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		760580AC27E3221800975794 /* TestAdsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760580AB27E3221800975794 /* TestAdsTests.swift */; };
-		760580B627E3221800975794 /* TestAdsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760580B527E3221800975794 /* TestAdsUITests.swift */; };
-		760580B827E3221800975794 /* TestAdsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760580B727E3221800975794 /* TestAdsUITestsLaunchTests.swift */; };
+		594832372A80D6C90073FFDA /* FullScreenNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594832352A80D6C90073FFDA /* FullScreenNativeAdView.swift */; };
+		594832382A80D6C90073FFDA /* FullScreenNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594832362A80D6C90073FFDA /* FullScreenNativeAdView.xib */; };
 		760580C227E3286000975794 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769556FF27E19EAE0028127E /* TestViewController.xib */; };
 		762F553B281A709E0000FB10 /* AdMobFullScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F551B281A709E0000FB10 /* AdMobFullScreenType.swift */; };
 		762F553E281A709E0000FB10 /* UIView+Extension+Admod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F551F281A709E0000FB10 /* UIView+Extension+Admod.swift */; };
@@ -73,11 +72,10 @@
 		042F528027D8E09E008D5330 /* MobileAds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileAds.h; sourceTree = "<group>"; };
 		042F528127D8E09E008D5330 /* MobileAds.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = MobileAds.docc; sourceTree = "<group>"; };
 		3D6191E3A787BACD7741EE30 /* Pods-MobileAds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAds.release.xcconfig"; path = "Target Support Files/Pods-MobileAds/Pods-MobileAds.release.xcconfig"; sourceTree = "<group>"; };
+		594832352A80D6C90073FFDA /* FullScreenNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenNativeAdView.swift; sourceTree = "<group>"; };
+		594832362A80D6C90073FFDA /* FullScreenNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullScreenNativeAdView.xib; sourceTree = "<group>"; };
 		760580A727E3221800975794 /* TestAdsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAdsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		760580AB27E3221800975794 /* TestAdsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAdsTests.swift; sourceTree = "<group>"; };
 		760580B127E3221800975794 /* TestAdsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAdsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		760580B527E3221800975794 /* TestAdsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAdsUITests.swift; sourceTree = "<group>"; };
-		760580B727E3221800975794 /* TestAdsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAdsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		762F551B281A709E0000FB10 /* AdMobFullScreenType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobFullScreenType.swift; sourceTree = "<group>"; };
 		762F551F281A709E0000FB10 /* UIView+Extension+Admod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension+Admod.swift"; sourceTree = "<group>"; };
 		762F5525281A709E0000FB10 /* MediumNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediumNativeAdView.xib; sourceTree = "<group>"; };
@@ -165,8 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				042F527F27D8E09E008D5330 /* MobileAds */,
-				760580AA27E3221800975794 /* TestAdsTests */,
-				760580B427E3221800975794 /* TestAdsUITests */,
 				042F527E27D8E09E008D5330 /* Products */,
 				0B3C28970600E0290042C2E8 /* Pods */,
 				16EE450534645BD057CED3CC /* Frameworks */,
@@ -215,26 +211,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		760580AA27E3221800975794 /* TestAdsTests */ = {
+		5948322D2A80A0420073FFDA /* CollabsibleBanner */ = {
 			isa = PBXGroup;
 			children = (
-				760580AB27E3221800975794 /* TestAdsTests.swift */,
 			);
-			path = TestAdsTests;
+			path = CollabsibleBanner;
 			sourceTree = "<group>";
 		};
-		760580B427E3221800975794 /* TestAdsUITests */ = {
+		594832302A80D0120073FFDA /* FullCreen */ = {
 			isa = PBXGroup;
 			children = (
-				760580B527E3221800975794 /* TestAdsUITests.swift */,
-				760580B727E3221800975794 /* TestAdsUITestsLaunchTests.swift */,
+				594832352A80D6C90073FFDA /* FullScreenNativeAdView.swift */,
+				594832362A80D6C90073FFDA /* FullScreenNativeAdView.xib */,
 			);
-			path = TestAdsUITests;
+			path = FullCreen;
 			sourceTree = "<group>";
 		};
 		762F5519281A709E0000FB10 /* AdMob */ = {
 			isa = PBXGroup;
 			children = (
+				5948322D2A80A0420073FFDA /* CollabsibleBanner */,
 				764A7CAA281B7AB5008EF803 /* Enum */,
 				762F5551281A75780000FB10 /* Manager */,
 				762F551E281A709E0000FB10 /* Extension */,
@@ -261,6 +257,7 @@
 		762F5520281A709E0000FB10 /* AdNative */ = {
 			isa = PBXGroup;
 			children = (
+				594832302A80D0120073FFDA /* FullCreen */,
 				76AEC42C2A5FF6130001EACC /* SmallMedia */,
 				76BDA4C22952B53C005D7FBA /* FreeSize */,
 				762F5521281A709E0000FB10 /* Unified */,
@@ -571,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				760580C227E3286000975794 /* TestViewController.xib in Resources */,
+				594832382A80D6C90073FFDA /* FullScreenNativeAdView.xib in Resources */,
 				762F5541281A709E0000FB10 /* MediumNativeAdView.xib in Resources */,
 				762F5544281A709E0000FB10 /* SmallNativeAdView.xib in Resources */,
 				76A83C65285C24FF0089E814 /* UnifiedNativeAdView_2.xib in Resources */,
@@ -633,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				762F5556281A82B10000FB10 /* UIColor+Extension.swift in Sources */,
+				594832372A80D6C90073FFDA /* FullScreenNativeAdView.swift in Sources */,
 				76DF877F28A3B59A0078B20E /* SKProduct+LocalizedPrice.swift in Sources */,
 				762F554D281A709E0000FB10 /* AdMobManager+Banner.swift in Sources */,
 				762F5545281A709E0000FB10 /* AdMobManager+Native.swift in Sources */,
@@ -680,7 +679,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				760580AC27E3221800975794 /* TestAdsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,8 +686,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				760580B627E3221800975794 /* TestAdsUITests.swift in Sources */,
-				760580B827E3221800975794 /* TestAdsUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
