@@ -53,6 +53,33 @@ extension AdMobManager: GADBannerViewDelegate {
         adBannerView.load(request)
     }
     
+    // Quảng cáo Collapsible đặt ở bottom, lần đầu sẽ mở rộng
+    public func addAdCollapsibleBannerAdaptive(unitId: AdUnitID, rootVC: UIViewController, view: UIView, isCollapsibleBanner: Bool = false) {
+        let adBannerView = self.createAdBannerIfNeed(unitId: unitId)
+        adBannerView.rootViewController = rootVC
+        view.addSubview(adBannerView)
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = UIColor.gray.cgColor
+        adBannerView.delegate = self
+        
+        adBannerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        if view.isSkeletonable == false {
+            adBannerView.isSkeletonable = true
+            let gradient = SkeletonGradient(baseColor: self.skeletonGradient)
+            adBannerView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight, duration: 0.7))
+        }
+        
+        adBannerView.adSize =  GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(screenWidthAds)
+        let request = GADRequest()
+        let gadExtras = GADExtras()
+        gadExtras.additionalParameters = ["collapsible": "bottom"]
+        request.register(gadExtras)
+        adBannerView.load(request)
+    }
+    
+    
     // quảng có thích ứng với chiều cao không cố định
     public func addAdBannerAdaptive(unitId: AdUnitID, rootVC: UIViewController, view: UIView) {
         let adBannerView = self.createAdBannerIfNeed(unitId: unitId)
