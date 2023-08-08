@@ -93,19 +93,21 @@ extension AdMobManager {
         }
     }
     
-    public func addAdNative(unitId: AdUnitID, rootVC: UIViewController, views: [UIView], type: NativeAdType = .small) {
+    public func addAdNative(unitId: AdUnitID, rootVC: UIViewController, views: [UIView], type: NativeAdType = .small, ratio: GADMediaAspectRatio = .portrait) {
         views.forEach{$0.tag = 0}
         createAdNativeView(unitId: unitId, type: type, views: views)
-        loadAdNative(unitId: unitId, rootVC: rootVC, numberOfAds: views.count)
+        loadAdNative(unitId: unitId, rootVC: rootVC, numberOfAds: views.count, ratio: ratio)
     }
     
-    private func loadAdNative(unitId: AdUnitID, rootVC: UIViewController, numberOfAds: Int) {
+    private func loadAdNative(unitId: AdUnitID, rootVC: UIViewController, numberOfAds: Int, ratio: GADMediaAspectRatio) {
         let multipleAdsOptions = GADMultipleAdsAdLoaderOptions()
         multipleAdsOptions.numberOfAds = numberOfAds
+        let aspectRatioOption = GADNativeAdMediaAdLoaderOptions()
+        aspectRatioOption.mediaAspectRatio = ratio
         let adLoader = GADAdLoader(adUnitID: unitId.rawValue,
             rootViewController: rootVC,
             adTypes: [ .native ],
-            options: [multipleAdsOptions])
+            options: [multipleAdsOptions,aspectRatioOption])
         listLoader.setObject(adLoader, forKey: unitId.rawValue as NSCopying)
         adLoader.delegate = self
         adLoader.load(GADRequest())
