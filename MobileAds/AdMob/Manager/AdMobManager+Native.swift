@@ -21,11 +21,14 @@ public enum NativeAdType {
     case unified(OptionAdType)
     case freeSize
     case smallMedia
+    case fullScreen
     
     var nibName: String {
         switch self {
         case .small:
             return "SmallNativeAdView"
+        case .fullScreen:
+            return "FullScreenNativeAdView"
         case .medium:
             return "MediumNativeAdView"
         case .unified(let option):
