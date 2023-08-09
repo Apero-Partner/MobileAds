@@ -50,7 +50,8 @@ class FullScreenNativeAdView: GADNativeAdView {
         
         (self.iconView as? UIImageView)?.image = nativeAd.icon?.image
         self.iconView?.isHidden = nativeAd.icon == nil
-
+        self.iconView?.layer.cornerRadius = 17
+        self.iconView?.layer.masksToBounds = true
         (self.starRatingView as? UIImageView)?.image = self.imageOfStars(from: nativeAd.starRating)
         self.starRatingView?.isHidden = nativeAd.starRating == nil || nativeAd.starRating == 0
         self.lblRateCount.isHidden = nativeAd.starRating == nil || nativeAd.starRating == 0
