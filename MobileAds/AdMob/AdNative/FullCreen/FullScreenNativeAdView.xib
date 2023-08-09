@@ -185,11 +185,11 @@
                             <rect key="frame" x="272" y="0.0" width="154" height="102"/>
                             <subviews>
                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5w-YA-UY8">
-                                    <rect key="frame" x="0.0" y="0.0" width="154" height="32"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="154" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="E5w-YA-UY8" secondAttribute="height" multiplier="154:32" id="P2b-ug-BWl"/>
-                                        <constraint firstAttribute="height" constant="32" id="PD1-HS-aDy"/>
+                                        <constraint firstAttribute="width" secondItem="E5w-YA-UY8" secondAttribute="height" multiplier="154:40" id="P2b-ug-BWl"/>
+                                        <constraint firstAttribute="height" constant="40" id="PD1-HS-aDy"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="14"/>
                                     <state key="normal">
@@ -204,7 +204,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXo-n7-Z2Q">
-                                    <rect key="frame" x="0.0" y="32" width="154" height="70"/>
+                                    <rect key="frame" x="0.0" y="40" width="154" height="62"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
