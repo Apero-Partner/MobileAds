@@ -229,7 +229,7 @@
                     </userDefinedRuntimeAttributes>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp1-oz-XOs">
-                    <rect key="frame" x="0.0" y="64" width="24" height="14"/>
+                    <rect key="frame" x="432" y="64" width="24" height="14"/>
                     <color key="backgroundColor" red="0.99215686274509807" green="0.72156862745098038" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="24" id="pFH-8G-Ktl"/>
@@ -254,7 +254,7 @@
                 <constraint firstItem="Ym0-78-SlA" firstAttribute="trailing" secondItem="eon-2u-pHO" secondAttribute="trailing" constant="15" id="mwM-IZ-ydk"/>
                 <constraint firstItem="eon-2u-pHO" firstAttribute="leading" secondItem="Ym0-78-SlA" secondAttribute="leading" constant="15" id="naz-ah-aK4"/>
                 <constraint firstItem="k7u-4q-ueh" firstAttribute="top" secondItem="Ym0-78-SlA" secondAttribute="top" constant="44" id="oZ3-VV-fDI"/>
-                <constraint firstItem="lp1-oz-XOs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xIm-Qm-Enr"/>
+                <constraint firstItem="Ym0-78-SlA" firstAttribute="trailing" secondItem="lp1-oz-XOs" secondAttribute="trailing" id="t8b-M4-Brw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>

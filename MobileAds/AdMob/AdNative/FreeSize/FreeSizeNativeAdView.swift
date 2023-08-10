@@ -25,6 +25,13 @@ class FreeSizeNativeAdView: GADNativeAdView {
     override func layoutSubviews() {
         super.layoutSubviews()
         lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 6)
+        
+        if backgroundAction.count > 1 {
+            self.callToActionView?.gradient(startColor: backgroundAction.first!, endColor: backgroundAction.last!, cornerRadius: 0)
+        } else {
+            (self.callToActionView as? UIButton)?.backgroundColor = backgroundAction.first
+            self.callToActionView?.layer.cornerRadius = 0
+        }
     }
     
     func bindingData(nativeAd: GADNativeAd) {
@@ -45,13 +52,6 @@ class FreeSizeNativeAdView: GADNativeAdView {
             (self.bodyView as? UILabel)?.text = nativeAd.advertiser
         } else {
             (self.bodyView as? UILabel)?.text = nativeAd.body
-        }
-        
-        if backgroundAction.count > 1 {
-            self.callToActionView?.gradient(startColor: backgroundAction.first!, endColor: backgroundAction.last!, cornerRadius: AdMobManager.shared.nativeButtonCornerRadius)
-        } else {
-            (self.callToActionView as? UIButton)?.backgroundColor = backgroundAction.first
-            self.callToActionView?.layer.cornerRadius = 0
         }
         
         (self.callToActionView as? UIButton)?.setTitleColor(actionColor, for: .normal)
