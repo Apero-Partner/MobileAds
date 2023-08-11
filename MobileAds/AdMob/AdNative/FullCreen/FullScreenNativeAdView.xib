@@ -26,13 +26,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7u-4q-ueh">
-                    <rect key="frame" x="0.0" y="64" width="456" height="348"/>
+                    <rect key="frame" x="0.0" y="0.0" width="456" height="514"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sup-DM-Eky">
                             <rect key="frame" x="0.0" y="0.0" width="373" height="144"/>
                         </imageView>
                         <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fNp-yu-K4i" customClass="GADMediaView">
-                            <rect key="frame" x="0.0" y="0.0" width="456" height="348"/>
+                            <rect key="frame" x="0.0" y="0.0" width="456" height="514"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -128,18 +128,37 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="auX-TY-NSs">
                             <rect key="frame" x="0.0" y="0.0" width="264" height="102"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beR-eV-DX1">
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jn8-mk-epj">
                                     <rect key="frame" x="0.0" y="0.0" width="264" height="17"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp1-oz-XOs">
+                                            <rect key="frame" x="0.0" y="1.5" width="24" height="14"/>
+                                            <color key="backgroundColor" red="0.99215686274509807" green="0.72156862745098038" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="pFH-8G-Ktl"/>
+                                                <constraint firstAttribute="height" constant="14" id="tV5-bs-gg7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beR-eV-DX1">
+                                            <rect key="frame" x="32" y="0.0" width="232" height="17"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="17" id="KOA-KS-M8u"/>
+                                        <constraint firstAttribute="height" constant="17" id="laS-X3-HNf"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
+                                </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0jx-VT-Qb9">
                                     <rect key="frame" x="0.0" y="25" width="264" height="40"/>
                                     <subviews>
@@ -228,33 +247,17 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp1-oz-XOs">
-                    <rect key="frame" x="432" y="64" width="24" height="14"/>
-                    <color key="backgroundColor" red="0.99215686274509807" green="0.72156862745098038" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="24" id="pFH-8G-Ktl"/>
-                        <constraint firstAttribute="height" constant="14" id="tV5-bs-gg7"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Ym0-78-SlA"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Ym0-78-SlA" firstAttribute="bottom" secondItem="eon-2u-pHO" secondAttribute="bottom" id="5y9-Oh-UIr"/>
-                <constraint firstItem="lp1-oz-XOs" firstAttribute="top" secondItem="k7u-4q-ueh" secondAttribute="top" id="Kjx-lc-TcY"/>
+                <constraint firstAttribute="bottom" secondItem="k7u-4q-ueh" secondAttribute="bottom" id="8f7-in-n23"/>
                 <constraint firstItem="k7u-4q-ueh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ktg-di-iDi"/>
                 <constraint firstItem="k7u-4q-ueh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="W0P-QD-tqW"/>
-                <constraint firstItem="eon-2u-pHO" firstAttribute="top" secondItem="k7u-4q-ueh" secondAttribute="bottom" id="YDs-22-Veu"/>
                 <constraint firstItem="Ym0-78-SlA" firstAttribute="trailing" secondItem="eon-2u-pHO" secondAttribute="trailing" constant="15" id="mwM-IZ-ydk"/>
                 <constraint firstItem="eon-2u-pHO" firstAttribute="leading" secondItem="Ym0-78-SlA" secondAttribute="leading" constant="15" id="naz-ah-aK4"/>
-                <constraint firstItem="k7u-4q-ueh" firstAttribute="top" secondItem="Ym0-78-SlA" secondAttribute="top" constant="44" id="oZ3-VV-fDI"/>
-                <constraint firstItem="Ym0-78-SlA" firstAttribute="trailing" secondItem="lp1-oz-XOs" secondAttribute="trailing" id="t8b-M4-Brw"/>
+                <constraint firstItem="k7u-4q-ueh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oZ3-VV-fDI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
