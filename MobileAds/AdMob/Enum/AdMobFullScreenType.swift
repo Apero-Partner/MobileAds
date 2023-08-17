@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum AdMobFullScreenType {
     case interstitial(id: AdUnitID)
@@ -30,6 +31,7 @@ enum AdMobFullScreenType {
     }
     
     func presentAd() {
+        UIApplication.shared.isStatusBarHidden = true
         switch self {
         case .interstitial(let id):
             AdMobManager.shared.presentAdInterstitial(unitId: id)
