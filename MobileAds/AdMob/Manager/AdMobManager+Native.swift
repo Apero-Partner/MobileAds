@@ -53,21 +53,18 @@ extension AdMobManager {
         return listLoader.object(forKey: unitId.rawValue) as? GADAdLoader
     }
 
-    private func getAdNative(unitId: String) -> [NativeAdProtocol] {
+    private func getAdNative(unitId: String) -> [NativeAdProtocol]? {
         if let adNativeView = listAd.object(forKey: unitId) as? [NativeAdProtocol] {
             return adNativeView
         }
-        return []
+        return nil
     }
     
     private func createAdNativeView(unitId: AdUnitID, type: NativeAdType = .small, views: [UIView]) {
-        let adNativeViews = getAdNative(unitId: unitId.rawValue)
-        removeAd(unitId: unitId.rawValue)
-        if !adNativeViews.isEmpty {
-            adNativeViews.forEach { adNativeView in
-                adNativeView.getGADView().removeFromSuperview()
-            }
+        if let _ = getAdNative(unitId: unitId.rawValue) {
+            return
         }
+
         var nativeViews: [NativeAdProtocol] = []
         views.forEach { view in
             guard
@@ -76,6 +73,7 @@ extension AdMobManager {
                     return
                 }
             let adNativeView = adNativeProtocol.getGADView()
+            view.tag = 0
             view.addSubview(adNativeView)
             adNativeView.snp.makeConstraints { make in
                 make.edges.equalToSuperview()
@@ -97,12 +95,14 @@ extension AdMobManager {
     }
     
     public func addAdNative(unitId: AdUnitID, rootVC: UIViewController, views: [UIView], type: NativeAdType = .small, ratio: GADMediaAspectRatio = .portrait) {
-        views.forEach{$0.tag = 0}
         createAdNativeView(unitId: unitId, type: type, views: views)
         loadAdNative(unitId: unitId, rootVC: rootVC, numberOfAds: views.count, ratio: ratio)
     }
     
     private func loadAdNative(unitId: AdUnitID, rootVC: UIViewController, numberOfAds: Int, ratio: GADMediaAspectRatio) {
+        if let _ = getNativeAdLoader(unitId: unitId) {
+            return
+        }
         let multipleAdsOptions = GADMultipleAdsAdLoaderOptions()
         multipleAdsOptions.numberOfAds = numberOfAds
         let aspectRatioOption = GADNativeAdMediaAdLoaderOptions()
@@ -110,7 +110,7 @@ extension AdMobManager {
         let adLoader = GADAdLoader(adUnitID: unitId.rawValue,
             rootViewController: rootVC,
             adTypes: [ .native ],
-            options: [multipleAdsOptions,aspectRatioOption])
+            options: [multipleAdsOptions, aspectRatioOption])
         listLoader.setObject(adLoader, forKey: unitId.rawValue as NSCopying)
         adLoader.delegate = self
         adLoader.load(GADRequest())
@@ -146,6 +146,7 @@ extension AdMobManager: GADAdLoaderDelegate {
     }
     
     public func adLoaderDidFinishLoading(_ adLoader: GADAdLoader) {
+        listLoader.removeObject(forKey: adLoader.adUnitID)
         print("ad==> adLoaderDidFinishLoading \(adLoader)")
     }
 }
@@ -157,7 +158,7 @@ extension AdMobManager: GADNativeAdLoaderDelegate {
         nativeAd.paidEventHandler = { value in
             self.trackAdRevenue(value: value, unitId: adLoader.adUnitID)
         }
-        guard var nativeAdView = self.getAdNative(unitId: adLoader.adUnitID).first(where: {$0.getGADView().tag == 0}) else {return}
+        guard var nativeAdView = self.getAdNative(unitId: adLoader.adUnitID)?.first(where: {$0.getGADView().tag == 0}) else {return}
         nativeAdView.getGADView().tag = 2
         nativeAd.mediaContent.videoController.delegate = self
         nativeAdView.updateId(value: adLoader.adUnitID)
