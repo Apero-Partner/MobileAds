@@ -102,13 +102,6 @@ open class AdMobManager: NSObject {
     
     //    MARK: - Remove ID ads
     public func removeAd(unitId: String) {
-        if let adNativeViews = listAd.object(forKey: unitId) as? [NativeAdProtocol] {
-            if !adNativeViews.isEmpty {
-                adNativeViews.forEach { adNativeView in
-                    adNativeView.getGADView().removeFromSuperview()
-                }
-            }
-        }
         listAd.removeObject(forKey: unitId)
         listLoader.removeObject(forKey: unitId)
     }
