@@ -100,7 +100,8 @@ extension AdMobManager {
     }
     
     private func loadAdNative(unitId: AdUnitID, rootVC: UIViewController, numberOfAds: Int, ratio: GADMediaAspectRatio) {
-        if let _ = getNativeAdLoader(unitId: unitId) {
+        if let loader = getNativeAdLoader(unitId: unitId) {
+            loader.load(GADRequest())
             return
         }
         let multipleAdsOptions = GADMultipleAdsAdLoaderOptions()
