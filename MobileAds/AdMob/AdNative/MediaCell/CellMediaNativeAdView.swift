@@ -20,23 +20,21 @@ class CellMediaNativeAdView: GADNativeAdView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = viewBackgroundColor
+        self.backgroundColor = UIColor.init(hex: 0xEEECFF)
         self.layer.cornerRadius = adConerRadius
-        mediaView?.clipsToBounds = true
-        mediaView?.layer.cornerRadius = adConerRadius - 9
-        mediaView?.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+     
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 6)
+        lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 14)
+        mediaView?.roundCorners(corners: [.topLeft, .topRight], radius: adConerRadius-4)
     }
     
     func bindingData(nativeAd: GADNativeAd) {
         self.hideSkeleton()
         (self.headlineView as? UILabel)?.text = nativeAd.headline
         self.mediaView?.mediaContent = nativeAd.mediaContent
-        self.mediaView?.layer.cornerRadius = 8
 
         let mediaContent = nativeAd.mediaContent
         if mediaContent.hasVideoContent {
@@ -68,22 +66,22 @@ class CellMediaNativeAdView: GADNativeAdView {
 
         (self.advertiserView as? UILabel)?.text = nativeAd.advertiser
         self.advertiserView?.isHidden = nativeAd.advertiser == nil
-        if backgroundAction.count > 1 {
-            self.callToActionView?.gradient(startColor: backgroundAction.first!, endColor: backgroundAction.last!, cornerRadius: AdMobManager.shared.adsNativeCornerRadiusButton)
-        } else {
-            self.callToActionView?.layer.backgroundColor = backgroundAction.first?.cgColor
-            self.callToActionView?.layer.cornerRadius = AdMobManager.shared.adsNativeCornerRadiusButton
-        }
-        (self.callToActionView as? UIButton)?.setTitleColor(actionColor, for: .normal)
+//        if backgroundAction.count > 1 {
+//            self.callToActionView?.gradient(startColor: .white.withAlphaComponent(0.35), endColor: backgroundAction.last!, cornerRadius: 0)
+//        } else {
+        self.callToActionView?.layer.backgroundColor = UIColor.white.withAlphaComponent(0.35).cgColor
+            //self.callToActionView?.layer.cornerRadius = AdMobManager.shared.adsNativeCornerRadiusButton
+       // }
+        (self.callToActionView as? UIButton)?.setTitleColor(UIColor.black, for: .normal)
         (self.bodyView as? UILabel)?.textColor = contenColor
         (advertiserView as? UILabel)?.textColor = vertiserColor
         lblRateCount.textColor = contenColor
         (priceView as? UILabel)?.textColor = contenColor
         (self.storeView as? UILabel)?.textColor = contenColor
-        (self.headlineView as? UILabel)?.textColor = titleColor
+        (self.headlineView as? UILabel)?.textColor = UIColor.black
         lblAds.textColor = AdMobManager.shared.adNativeAdsLabelColor
-        lblAds.backgroundColor = AdMobManager.shared.adNativeBackgroundAdsLabelColor   
-        self.backgroundColor = viewBackgroundColor
+        lblAds.backgroundColor = UIColor.init(hex: 0x645D5D)
+        self.backgroundColor = UIColor.init(hex: 0xEEECFF)
         layer.borderWidth = AdMobManager.shared.adsNativeBorderWidth
         layer.borderColor = AdMobManager.shared.adsNativeBorderColor.cgColor
         layer.cornerRadius = AdMobManager.shared.adsNativeCornerRadius
