@@ -11,6 +11,8 @@
 		042F528327D8E09E008D5330 /* MobileAds.h in Headers */ = {isa = PBXBuildFile; fileRef = 042F528027D8E09E008D5330 /* MobileAds.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		594832372A80D6C90073FFDA /* FullScreenNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594832352A80D6C90073FFDA /* FullScreenNativeAdView.swift */; };
 		594832382A80D6C90073FFDA /* FullScreenNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594832362A80D6C90073FFDA /* FullScreenNativeAdView.xib */; };
+		59EB72202AA707040036E1C2 /* CellMediaNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59EB721E2AA707040036E1C2 /* CellMediaNativeAdView.xib */; };
+		59EB72212AA707040036E1C2 /* CellMediaNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EB721F2AA707040036E1C2 /* CellMediaNativeAdView.swift */; };
 		760580C227E3286000975794 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769556FF27E19EAE0028127E /* TestViewController.xib */; };
 		762F553B281A709E0000FB10 /* AdMobFullScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F551B281A709E0000FB10 /* AdMobFullScreenType.swift */; };
 		762F553E281A709E0000FB10 /* UIView+Extension+Admod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762F551F281A709E0000FB10 /* UIView+Extension+Admod.swift */; };
@@ -74,6 +76,8 @@
 		3D6191E3A787BACD7741EE30 /* Pods-MobileAds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAds.release.xcconfig"; path = "Target Support Files/Pods-MobileAds/Pods-MobileAds.release.xcconfig"; sourceTree = "<group>"; };
 		594832352A80D6C90073FFDA /* FullScreenNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenNativeAdView.swift; sourceTree = "<group>"; };
 		594832362A80D6C90073FFDA /* FullScreenNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullScreenNativeAdView.xib; sourceTree = "<group>"; };
+		59EB721E2AA707040036E1C2 /* CellMediaNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellMediaNativeAdView.xib; sourceTree = "<group>"; };
+		59EB721F2AA707040036E1C2 /* CellMediaNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellMediaNativeAdView.swift; sourceTree = "<group>"; };
 		760580A727E3221800975794 /* TestAdsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAdsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		760580B127E3221800975794 /* TestAdsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAdsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		762F551B281A709E0000FB10 /* AdMobFullScreenType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobFullScreenType.swift; sourceTree = "<group>"; };
@@ -227,6 +231,15 @@
 			path = FullCreen;
 			sourceTree = "<group>";
 		};
+		59EB721D2AA706A80036E1C2 /* MediaCell */ = {
+			isa = PBXGroup;
+			children = (
+				59EB721F2AA707040036E1C2 /* CellMediaNativeAdView.swift */,
+				59EB721E2AA707040036E1C2 /* CellMediaNativeAdView.xib */,
+			);
+			path = MediaCell;
+			sourceTree = "<group>";
+		};
 		762F5519281A709E0000FB10 /* AdMob */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +270,7 @@
 		762F5520281A709E0000FB10 /* AdNative */ = {
 			isa = PBXGroup;
 			children = (
+				59EB721D2AA706A80036E1C2 /* MediaCell */,
 				594832302A80D0120073FFDA /* FullCreen */,
 				76AEC42C2A5FF6130001EACC /* SmallMedia */,
 				76BDA4C22952B53C005D7FBA /* FreeSize */,
@@ -575,6 +589,7 @@
 				762F554A281A709E0000FB10 /* AdFullScreenLoadingVC.xib in Resources */,
 				762F554F281A709E0000FB10 /* AdBannerBottomVC.xib in Resources */,
 				76A495AA28365022008685CF /* stars_4.png in Resources */,
+				59EB72202AA707040036E1C2 /* CellMediaNativeAdView.xib in Resources */,
 				76A495A828365022008685CF /* stars_3_5.png in Resources */,
 				76A495AB28365022008685CF /* stars_4_5.png in Resources */,
 				76AEC4342A5FF6E20001EACC /* SmallMediaNativeAdView.xib in Resources */,
@@ -664,6 +679,7 @@
 				76DF878A28A3B59A0078B20E /* PaymentQueueController.swift in Sources */,
 				76A83C64285C24FF0089E814 /* UnifiedNativeAdView_2.swift in Sources */,
 				762F5547281A709E0000FB10 /* AdMobManager+Rewarded.swift in Sources */,
+				59EB72212AA707040036E1C2 /* CellMediaNativeAdView.swift in Sources */,
 				042F528227D8E09E008D5330 /* MobileAds.docc in Sources */,
 				76DF878528A3B59A0078B20E /* ProductsInfoController.swift in Sources */,
 				76BDA4C52952B609005D7FBA /* FreeSizeNativeAdView.swift in Sources */,

@@ -22,6 +22,7 @@ public enum NativeAdType {
     case freeSize
     case smallMedia
     case fullScreen
+    case collectionViewCell
     
     var nibName: String {
         switch self {
@@ -42,6 +43,8 @@ public enum NativeAdType {
             return "FreeSizeNativeAdView"
         case .smallMedia:
             return "SmallMediaNativeAdView"
+        case .collectionViewCell:
+            return "CellMediaNativeAdView"
         }
     }
 }
@@ -74,6 +77,9 @@ extension AdMobManager {
                 }
             let adNativeView = adNativeProtocol.getGADView()
             view.tag = 0
+            view.subviews.forEach { subView in
+                subView.removeFromSuperview()
+            }
             view.addSubview(adNativeView)
             adNativeView.snp.makeConstraints { make in
                 make.edges.equalToSuperview()
