@@ -31,17 +31,17 @@
                             <rect key="frame" x="0.0" y="0.0" width="102" height="125"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Dv7-ni-qI6">
-                                    <rect key="frame" x="8" y="8" width="86" height="109"/>
+                                    <rect key="frame" x="10" y="10" width="82" height="107"/>
                                     <subviews>
                                         <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fNp-yu-K4i" customClass="GADMediaView">
-                                            <rect key="frame" x="0.0" y="0.0" width="86" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="82" height="79"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="753" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beR-eV-DX1">
-                                            <rect key="frame" x="0.0" y="97" width="86" height="12"/>
+                                            <rect key="frame" x="0.0" y="95" width="82" height="12"/>
                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
                                             <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -58,9 +58,9 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Dv7-ni-qI6" secondAttribute="bottom" constant="8" id="AMT-gB-Bu0"/>
-                                <constraint firstAttribute="trailing" secondItem="Dv7-ni-qI6" secondAttribute="trailing" constant="8" id="EEC-cN-JjN"/>
-                                <constraint firstItem="Dv7-ni-qI6" firstAttribute="top" secondItem="k7u-4q-ueh" secondAttribute="top" constant="8" id="O5G-mO-iRH"/>
-                                <constraint firstItem="Dv7-ni-qI6" firstAttribute="leading" secondItem="k7u-4q-ueh" secondAttribute="leading" constant="8" id="goi-gJ-DL3"/>
+                                <constraint firstAttribute="trailing" secondItem="Dv7-ni-qI6" secondAttribute="trailing" constant="10" id="EEC-cN-JjN"/>
+                                <constraint firstItem="Dv7-ni-qI6" firstAttribute="top" secondItem="k7u-4q-ueh" secondAttribute="top" constant="10" id="O5G-mO-iRH"/>
+                                <constraint firstItem="Dv7-ni-qI6" firstAttribute="leading" secondItem="k7u-4q-ueh" secondAttribute="leading" constant="10" id="goi-gJ-DL3"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
