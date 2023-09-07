@@ -101,6 +101,7 @@ extension AdMobManager {
     }
     
     public func addAdNative(unitId: AdUnitID, rootVC: UIViewController, views: [UIView], type: NativeAdType = .small, ratio: GADMediaAspectRatio = .portrait) {
+        removeAd(unitId: unitId.rawValue)
         createAdNativeView(unitId: unitId, type: type, views: views)
         loadAdNative(unitId: unitId, rootVC: rootVC, numberOfAds: views.count, ratio: ratio)
     }

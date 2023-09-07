@@ -15,6 +15,7 @@ class CellMediaNativeAdView: GADNativeAdView {
     @IBOutlet weak var lblRateCount: UILabel!
     var adConerRadius: CGFloat = 30
     
+    @IBOutlet weak var adBgView: UIView!
     let (viewBackgroundColor, titleColor, vertiserColor, contenColor, actionColor, backgroundAction) = AdMobManager.shared.adsNativeColor.colors
     var adUnitID: String?
     
@@ -80,7 +81,8 @@ class CellMediaNativeAdView: GADNativeAdView {
         (self.storeView as? UILabel)?.textColor = contenColor
         (self.headlineView as? UILabel)?.textColor = UIColor.black
         lblAds.textColor = AdMobManager.shared.adNativeAdsLabelColor
-        lblAds.backgroundColor = UIColor.init(hex: 0x645D5D)
+        lblAds.backgroundColor = .clear
+        adBgView.backgroundColor = UIColor.init(hex: 0x645D5D)
         self.backgroundColor = UIColor.init(hex: 0xEEECFF)
         layer.borderWidth = AdMobManager.shared.adsNativeBorderWidth
         layer.borderColor = AdMobManager.shared.adsNativeBorderColor.cgColor
