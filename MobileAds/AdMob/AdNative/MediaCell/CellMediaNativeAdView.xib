@@ -174,7 +174,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp1-oz-XOs">
-                    <rect key="frame" x="4" y="4" width="20" height="20"/>
+                    <rect key="frame" x="3" y="3" width="20" height="20"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="pFH-8G-Ktl"/>
@@ -192,13 +192,12 @@
             <constraints>
                 <constraint firstItem="JRD-9o-9eJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4YX-mX-59q"/>
                 <constraint firstAttribute="trailing" secondItem="JRD-9o-9eJ" secondAttribute="trailing" id="72r-AA-2ZZ"/>
-                <constraint firstItem="E5w-YA-UY8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="125" id="7av-VA-pgo"/>
-                <constraint firstItem="lp1-oz-XOs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="BPJ-Fx-zdF"/>
+                <constraint firstItem="lp1-oz-XOs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="BPJ-Fx-zdF"/>
                 <constraint firstItem="c2Y-Sc-UeU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-12" id="ERO-Dt-N2a"/>
                 <constraint firstAttribute="bottom" secondItem="JRD-9o-9eJ" secondAttribute="bottom" id="VDR-eT-FaF"/>
                 <constraint firstItem="JRD-9o-9eJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gdo-ql-jYx"/>
                 <constraint firstItem="c2Y-Sc-UeU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-12" id="u0a-sf-phj"/>
-                <constraint firstItem="lp1-oz-XOs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="xIm-Qm-Enr"/>
+                <constraint firstItem="lp1-oz-XOs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="3" id="xIm-Qm-Enr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
