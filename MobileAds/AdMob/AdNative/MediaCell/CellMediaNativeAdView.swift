@@ -28,7 +28,7 @@ class CellMediaNativeAdView: GADNativeAdView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        lblAds.roundCorners(corners: [.topLeft, .bottomRight], radius: 14)
+        lblAds.layer.cornerRadius = 2
         mediaView?.roundCorners(corners: [.topLeft, .topRight], radius: adConerRadius-6)
     }
     
@@ -81,7 +81,6 @@ class CellMediaNativeAdView: GADNativeAdView {
         (self.storeView as? UILabel)?.textColor = contenColor
         (self.headlineView as? UILabel)?.textColor = UIColor.black
         lblAds.textColor = AdMobManager.shared.adNativeAdsLabelColor
-        lblAds.backgroundColor = .clear
         adBgView.backgroundColor = UIColor.init(hex: 0x645D5D)
         self.backgroundColor = UIColor.init(hex: 0xEEECFF)
         layer.borderWidth = AdMobManager.shared.adsNativeBorderWidth
