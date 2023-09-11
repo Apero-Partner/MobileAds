@@ -28,6 +28,7 @@ class CellMediaNativeAdView: GADNativeAdView {
     override func layoutSubviews() {
         super.layoutSubviews()
         lblAds.layer.cornerRadius = 2
+        lblAds.layer.masksToBounds = true
         mediaView?.roundCorners(corners: [.topLeft, .topRight], radius: adConerRadius-6)
     }
     
