@@ -108,7 +108,7 @@ open class AdMobManager: NSObject {
     
     //    MARK: - Track Ad Revenue
     func trackAdRevenue(value: GADAdValue, unitId: String) {
-        Analytics.logEvent("ad_impression_value", parameters: ["adunitid" : unitId, "value" : "\(value.value.doubleValue)"])
+        Analytics.logEvent("paid_ad_impression_value", parameters: ["adunitid" : unitId, "value" : "\(value.value.doubleValue)"])
         if let adRevenue = ADJAdRevenue(source: ADJAdRevenueSourceAdMob) {
             adRevenue.setRevenue(value.value.doubleValue, currency: value.currencyCode)
             Adjust.trackAdRevenue(adRevenue)
