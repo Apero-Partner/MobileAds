@@ -50,21 +50,6 @@
 		76AEC4342A5FF6E20001EACC /* SmallMediaNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76AEC4322A5FF6E20001EACC /* SmallMediaNativeAdView.xib */; };
 		76BDA4C52952B609005D7FBA /* FreeSizeNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BDA4C32952B609005D7FBA /* FreeSizeNativeAdView.swift */; };
 		76BDA4C62952B609005D7FBA /* FreeSizeNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BDA4C42952B609005D7FBA /* FreeSizeNativeAdView.xib */; };
-		76DF877F28A3B59A0078B20E /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877028A3B59A0078B20E /* SKProduct+LocalizedPrice.swift */; };
-		76DF878028A3B59A0078B20E /* InAppProductQueryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877128A3B59A0078B20E /* InAppProductQueryRequest.swift */; };
-		76DF878128A3B59A0078B20E /* InAppReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877228A3B59A0078B20E /* InAppReceiptRefreshRequest.swift */; };
-		76DF878228A3B59A0078B20E /* SwiftyStoreKit+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877328A3B59A0078B20E /* SwiftyStoreKit+Types.swift */; };
-		76DF878328A3B59A0078B20E /* InAppReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877428A3B59A0078B20E /* InAppReceipt.swift */; };
-		76DF878428A3B59A0078B20E /* SwiftyStoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877528A3B59A0078B20E /* SwiftyStoreKit.swift */; };
-		76DF878528A3B59A0078B20E /* ProductsInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877628A3B59A0078B20E /* ProductsInfoController.swift */; };
-		76DF878628A3B59A0078B20E /* CompleteTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877728A3B59A0078B20E /* CompleteTransactionsController.swift */; };
-		76DF878728A3B59A0078B20E /* PaymentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877828A3B59A0078B20E /* PaymentsController.swift */; };
-		76DF878828A3B59A0078B20E /* OS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877928A3B59A0078B20E /* OS.swift */; };
-		76DF878928A3B59A0078B20E /* RestorePurchasesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877A28A3B59A0078B20E /* RestorePurchasesController.swift */; };
-		76DF878A28A3B59A0078B20E /* PaymentQueueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877B28A3B59A0078B20E /* PaymentQueueController.swift */; };
-		76DF878B28A3B59A0078B20E /* InAppReceiptVerificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877C28A3B59A0078B20E /* InAppReceiptVerificator.swift */; };
-		76DF878C28A3B59A0078B20E /* SKProductDiscount+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877D28A3B59A0078B20E /* SKProductDiscount+LocalizedPrice.swift */; };
-		76DF878D28A3B59A0078B20E /* AppleReceiptValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF877E28A3B59A0078B20E /* AppleReceiptValidator.swift */; };
 		9518C34C82D27DEB7F343B3D /* Pods_MobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA7FFED897F79E7EE95595D /* Pods_MobileAds.framework */; };
 		9AF73B2D283CF2F60084DDDF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF73B2C283CF2F60084DDDF /* Utils.swift */; };
 /* End PBXBuildFile section */
@@ -117,21 +102,6 @@
 		76AEC4322A5FF6E20001EACC /* SmallMediaNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmallMediaNativeAdView.xib; sourceTree = "<group>"; };
 		76BDA4C32952B609005D7FBA /* FreeSizeNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeSizeNativeAdView.swift; sourceTree = "<group>"; };
 		76BDA4C42952B609005D7FBA /* FreeSizeNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreeSizeNativeAdView.xib; sourceTree = "<group>"; };
-		76DF877028A3B59A0078B20E /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
-		76DF877128A3B59A0078B20E /* InAppProductQueryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppProductQueryRequest.swift; sourceTree = "<group>"; };
-		76DF877228A3B59A0078B20E /* InAppReceiptRefreshRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppReceiptRefreshRequest.swift; sourceTree = "<group>"; };
-		76DF877328A3B59A0078B20E /* SwiftyStoreKit+Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyStoreKit+Types.swift"; sourceTree = "<group>"; };
-		76DF877428A3B59A0078B20E /* InAppReceipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppReceipt.swift; sourceTree = "<group>"; };
-		76DF877528A3B59A0078B20E /* SwiftyStoreKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyStoreKit.swift; sourceTree = "<group>"; };
-		76DF877628A3B59A0078B20E /* ProductsInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsInfoController.swift; sourceTree = "<group>"; };
-		76DF877728A3B59A0078B20E /* CompleteTransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteTransactionsController.swift; sourceTree = "<group>"; };
-		76DF877828A3B59A0078B20E /* PaymentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsController.swift; sourceTree = "<group>"; };
-		76DF877928A3B59A0078B20E /* OS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OS.swift; sourceTree = "<group>"; };
-		76DF877A28A3B59A0078B20E /* RestorePurchasesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorePurchasesController.swift; sourceTree = "<group>"; };
-		76DF877B28A3B59A0078B20E /* PaymentQueueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentQueueController.swift; sourceTree = "<group>"; };
-		76DF877C28A3B59A0078B20E /* InAppReceiptVerificator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppReceiptVerificator.swift; sourceTree = "<group>"; };
-		76DF877D28A3B59A0078B20E /* SKProductDiscount+LocalizedPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProductDiscount+LocalizedPrice.swift"; sourceTree = "<group>"; };
-		76DF877E28A3B59A0078B20E /* AppleReceiptValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleReceiptValidator.swift; sourceTree = "<group>"; };
 		81C375E0FFD76EAD714F0329 /* Pods-MobileAds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAds.debug.xcconfig"; path = "Target Support Files/Pods-MobileAds/Pods-MobileAds.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF73B2C283CF2F60084DDDF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DFA7FFED897F79E7EE95595D /* Pods_MobileAds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileAds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +156,6 @@
 		042F527F27D8E09E008D5330 /* MobileAds */ = {
 			isa = PBXGroup;
 			children = (
-				76DF876F28A3B59A0078B20E /* SwiftyStoreKit */,
 				768BF63D283F243C00737CEF /* RemoteConfig */,
 				7667C7882836001700D47F77 /* Assets */,
 				762F5519281A709E0000FB10 /* AdMob */,
@@ -444,28 +413,6 @@
 			path = FreeSize;
 			sourceTree = "<group>";
 		};
-		76DF876F28A3B59A0078B20E /* SwiftyStoreKit */ = {
-			isa = PBXGroup;
-			children = (
-				76DF877028A3B59A0078B20E /* SKProduct+LocalizedPrice.swift */,
-				76DF877128A3B59A0078B20E /* InAppProductQueryRequest.swift */,
-				76DF877228A3B59A0078B20E /* InAppReceiptRefreshRequest.swift */,
-				76DF877328A3B59A0078B20E /* SwiftyStoreKit+Types.swift */,
-				76DF877428A3B59A0078B20E /* InAppReceipt.swift */,
-				76DF877528A3B59A0078B20E /* SwiftyStoreKit.swift */,
-				76DF877628A3B59A0078B20E /* ProductsInfoController.swift */,
-				76DF877728A3B59A0078B20E /* CompleteTransactionsController.swift */,
-				76DF877828A3B59A0078B20E /* PaymentsController.swift */,
-				76DF877928A3B59A0078B20E /* OS.swift */,
-				76DF877A28A3B59A0078B20E /* RestorePurchasesController.swift */,
-				76DF877B28A3B59A0078B20E /* PaymentQueueController.swift */,
-				76DF877C28A3B59A0078B20E /* InAppReceiptVerificator.swift */,
-				76DF877D28A3B59A0078B20E /* SKProductDiscount+LocalizedPrice.swift */,
-				76DF877E28A3B59A0078B20E /* AppleReceiptValidator.swift */,
-			);
-			path = SwiftyStoreKit;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -647,44 +594,29 @@
 			files = (
 				762F5556281A82B10000FB10 /* UIColor+Extension.swift in Sources */,
 				594832372A80D6C90073FFDA /* FullScreenNativeAdView.swift in Sources */,
-				76DF877F28A3B59A0078B20E /* SKProduct+LocalizedPrice.swift in Sources */,
 				762F554D281A709E0000FB10 /* AdMobManager+Banner.swift in Sources */,
 				762F5545281A709E0000FB10 /* AdMobManager+Native.swift in Sources */,
-				76DF878128A3B59A0078B20E /* InAppReceiptRefreshRequest.swift in Sources */,
-				76DF878628A3B59A0078B20E /* CompleteTransactionsController.swift in Sources */,
 				762F5548281A709E0000FB10 /* AdMobManager.swift in Sources */,
 				762F5543281A709E0000FB10 /* SmallNativeAdView.swift in Sources */,
 				762F553E281A709E0000FB10 /* UIView+Extension+Admod.swift in Sources */,
 				762F554B281A709E0000FB10 /* AdFullScreenLoadingVC.swift in Sources */,
-				76DF878C28A3B59A0078B20E /* SKProductDiscount+LocalizedPrice.swift in Sources */,
 				9AF73B2D283CF2F60084DDDF /* Utils.swift in Sources */,
 				762F554E281A709E0000FB10 /* AdBannerBottomVC.swift in Sources */,
 				7695570027E19EAE0028127E /* TestViewController.swift in Sources */,
 				76AEC4332A5FF6E20001EACC /* SmallMediaNativeAdView.swift in Sources */,
-				76DF878228A3B59A0078B20E /* SwiftyStoreKit+Types.swift in Sources */,
 				7695570627E1A6010028127E /* BundleAds.swift in Sources */,
 				768BF63F283F244D00737CEF /* RemoteConfigService.swift in Sources */,
-				76DF878028A3B59A0078B20E /* InAppProductQueryRequest.swift in Sources */,
 				7695570927E1BDA80028127E /* TestManager.swift in Sources */,
-				76DF878B28A3B59A0078B20E /* InAppReceiptVerificator.swift in Sources */,
-				76DF878328A3B59A0078B20E /* InAppReceipt.swift in Sources */,
 				762F553B281A709E0000FB10 /* AdMobFullScreenType.swift in Sources */,
 				762F5546281A709E0000FB10 /* AdResumeManager.swift in Sources */,
-				76DF878828A3B59A0078B20E /* OS.swift in Sources */,
 				762F5550281A709E0000FB10 /* ConstantsAds.swift in Sources */,
-				76DF878728A3B59A0078B20E /* PaymentsController.swift in Sources */,
-				76DF878D28A3B59A0078B20E /* AppleReceiptValidator.swift in Sources */,
 				762F5542281A709E0000FB10 /* MediumNativeAdView.swift in Sources */,
 				7660A7E8283742C400262745 /* UnifiedNativeAdView.swift in Sources */,
-				76DF878A28A3B59A0078B20E /* PaymentQueueController.swift in Sources */,
 				76A83C64285C24FF0089E814 /* UnifiedNativeAdView_2.swift in Sources */,
 				762F5547281A709E0000FB10 /* AdMobManager+Rewarded.swift in Sources */,
 				59EB72212AA707040036E1C2 /* CellMediaNativeAdView.swift in Sources */,
 				042F528227D8E09E008D5330 /* MobileAds.docc in Sources */,
-				76DF878528A3B59A0078B20E /* ProductsInfoController.swift in Sources */,
 				76BDA4C52952B609005D7FBA /* FreeSizeNativeAdView.swift in Sources */,
-				76DF878928A3B59A0078B20E /* RestorePurchasesController.swift in Sources */,
-				76DF878428A3B59A0078B20E /* SwiftyStoreKit.swift in Sources */,
 				762F554C281A709E0000FB10 /* UIViewControll+Extension+Ads.swift in Sources */,
 				762F5553281A81D50000FB10 /* UIApplication+Extension.swift in Sources */,
 				762F5549281A709E0000FB10 /* AdMobManager+Interstitial.swift in Sources */,
